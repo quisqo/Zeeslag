@@ -27,7 +27,7 @@ public class Zeeslag {
 			}
 		}
 		
-		System.out.println(" Je hebt " + aantalSchoten + " nodig gehad om het schip te laten zinken ");
+		System.out.println(" Je hebt " + aantalSchoten + " schoten nodig gehad om het schip te laten zinken ");
 		
 	}
 		
