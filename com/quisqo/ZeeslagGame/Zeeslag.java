@@ -1,18 +1,20 @@
 package com.quisqo.ZeeslagGame;
 
 import java.util.Scanner;
+import java.util.*;
+
+
 
 public class Zeeslag {
 	
-	//hier komt het board
-	//hier komt de boot
-	
-	
 	public static void main (String[] args) {
-		
-		System.out.println("De slag begint");
-		System.out.println("Breng het schip van de ander tot zinken");
+		Schip schip = new Schip();
+		int [] locaties = {2, 3, 4};
+		schip.setLocaties(locaties);
+		String spelersSchot = "1";
+		schip.testSchot(spelersSchot);
 		
 	}
-
+		
+		
 }
