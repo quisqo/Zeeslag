@@ -1,31 +1,40 @@
 package com.quisqo.ZeeslagGame;
 
+import java.util.ArrayList;
+
 public class Schip {
-	private int [] locatie;
-	private int aantalSchoten;
+	private ArrayList<String> locatie = new ArrayList<String>();
+	private String name;
+	private int size;
 	
-	public void setLocaties (int [] loc) {
-		locatie = loc;
+	public Schip (String name, int size) {
+		this.name = name;
+		this.size = size;
 	}
 	
-	public String testSchot (String spelersSchot) {
+	public ArrayList<String>getLocatie(){
+		return locatie;
+	}
+	public int getSize() {
+		return size;
+	}
+	public void setLocatie(ArrayList<String>locatieToSet) {
+		this.locatie.addAll(locatieToSet);
+	}
+	
+	
+	public String check (String schot) {
 		String resultaat = "mis";
-		
-		int schot = Integer.parseInt(spelersSchot);
-		
-		for (int loc : locatie) {
-			
-			if (schot == loc) {
-				
-				aantalSchoten++;
-				
-				resultaat = aantalSchoten == locatie.length ? "Zink" : "Raak";
-				break;
-			}
+		if (locatie.contains(schot)){
+			locatie.remove(schot);
+			resultaat = locatie.isEmpty() ? "Zink" : "Raak";
 		}
-		
-		System.out.println(resultaat);
-		
+
 		return resultaat;
-	}
+		
+			}
+	public String getName() {
+		return name;
+		}
+
 }
