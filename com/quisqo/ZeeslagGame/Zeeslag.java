@@ -29,18 +29,18 @@ public class Zeeslag {
 		String schot, resultaat;
 		Scanner input = new Scanner(System.in);
 		while (!schip.isEmpty()) {
-			resultaat = "mis";
+			resultaat = " Mis, haha. ";
 			aantalSchoten++;
 			System.out.println(" Schiet maar! ");
 			schot = input.nextLine();
 			schot = schot.toUpperCase();
 			for (int i = 0; i < schip.size(); i++) {
 				resultaat = (schip.get(i).check(schot));
-				if (resultaat.equals(" Zink ")) {
-					resultaat = (" Je zinkt " + schip.get(i).getName());
+				if (resultaat.equals(" Blublub ")) {
+					resultaat = (" Je hebt " + schip.get(i).getName()+ " laten zinken ");
 					schip.remove(i);
 					break;
-				} else if (resultaat.equals(" raak ")) {
+				} else if (resultaat.equals(" Raak ")) {
 					break;
 				}
 			}
@@ -53,11 +53,11 @@ public class Zeeslag {
 	}
 
 	private void finish() {
-		if (aantalSchoten == 5) {
+		if (aantalSchoten == 9) {
 			System.out.println(" Fantastisch gedaan, een perfect score. ");
-		} else if (aantalSchoten < 10) {
+		} else if (aantalSchoten < 20) {
 			System.out.println(" Goed gedaan! Je hebt er " + aantalSchoten + " voor nodig gehad. ");
-		} else if (aantalSchoten < 15) {
+		} else if (aantalSchoten < 30) {
 			System.out.println(" Netjes gedaan! Je hebt er " + aantalSchoten + " voor nodig gehad. ");
 		} else {
 			System.out.println(" Je kan er niks van! Je hebt er " + aantalSchoten + " voor nodig gehad. ");
